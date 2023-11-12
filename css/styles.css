@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f2f7ff; 
+}
+
+header,
+footer {
+    background-color: #2c3e50; 
+    color: #ecf0f1; 
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #3498db;
+    border-bottom: 1px solid #2980b9;
+}
+
+nav a,
+.navbar-toggler-icon {
+    color: #000 !important;
+}
+
+.navbar-brand {
+    color: #000 !important; 
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #000 !important;
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: #000 !important; 
+}
+
+section {
+    flex: 1;
+    padding: 2em;
+    text-align: center; 
+}
+
+.container {
+    background-color: #fff; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    margin: 20px auto; 
+    max-width: 600px; 
+}
+
+.btn {
+    border-radius: 4px;
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom of the page */
+}
+
+.custom-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* Light shadow black background for carousel captions! */
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.carousel-item {
+    height: 540px; /* Set a fixed height for all carousel items, 540 seems to be sweet spot */
+    overflow: hidden; 
+    padding-top: 10px;
+}
