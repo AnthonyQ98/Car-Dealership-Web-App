@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamilton College Motors</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="ContactUs">
+    <header>
+        <h1>Contact Hamilton College</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HC Motors</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SomePageHereLads??</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Buy a car</a>
+                        <a class="dropdown-item" href="#">Sell my Car</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Book a service</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ContactFormContainer">
+        <div class="ContactFormParentClass">
+            <div class="CF ContactFormImage">
+
+                <!-- Image obtained from
+                https://unsplash.com/photos/black-car-on-road-between-trees-during-daytime-ROdIreK_960 -->
+                <img src="Images/CarPortrait.jpg" alt="Image of car for container">
+            </div>
+            <div class="CF ContactForm">
+                <div class="InnerContactForm">
+                    <h2> General Queries
+                    </h2>
+                    <h3> Enter Your Information Below:
+                    </h3>
+
+                    <p>Name: </p>
+                    <input id="Name" type="text" required>
+                    <p>Email: </p>
+                    <input id="Email" type="text" pattern=".+@.+\.([a-z]+)" required>
+                    <p>Phone: </p>
+                    <input id=" Phone" type="number" required>
+
+
+                    <div id="radio">
+                        <p><label>I want to be contacted by: </label></p>
+                        <div class="contact-options">
+                            <div class="contact-option">
+                                <label>Phone</label><input type="radio" name="Contact" required />
+                            </div>
+                            <div class="contact-option">
+                                <label>Email</label><input type="radio" name="Contact" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Subject: </p>
+
+                    <input type="text" required>
+                    <p>Details: </p>
+                    <textarea id="Details" rows="5" cols=" 22" Required></textarea><br>
+                    <input type="submit" id="btn_send" value="SEND">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" container text-center my-4">
+        <button class="btn btn-primary mx-2" onclick="window.location.href = 'ContactUs.html';">Contact
+            Us</button>
+        <button class="btn btn-success mx-2">Leasing</button>
+        <button class="btn btn-info mx-2">Sell My Car</button>
+        <button class="btn btn-warning mx-2" onclick="window.location.href = 'MeetTheTeam.html';">Meet the
+            Team</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Car Dealership. All rights reserved.</p>
+    </footer>
+
+
+
+</body>
+
+</html>
