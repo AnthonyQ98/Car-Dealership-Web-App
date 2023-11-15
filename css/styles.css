@@ -85,3 +85,225 @@ footer {
 .car-card:hover{
     transform: scale(1.02);
 }
+
+/* Idea here is to have a contact form with an image of a car beside it. As the page decreases in size the image of the car fades to the background. */
+
+.ContactFormContainer {
+    margin-top: -0px;
+}
+
+.ContactFormParentClass {
+    background: #fff;
+    display: flex;
+    height: auto;
+}
+
+
+
+
+.CF {
+    display: flex;
+    flex: 1;
+}
+
+#radio p {
+    text-align: center;
+}
+
+#radio .contact-options {
+    text-align: center;
+}
+
+#radio .contact-option {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#radio label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#radio input {
+    vertical-align: middle;
+}
+
+
+.ContactFormImage img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContactFormImage img {
+    margin-top: 110px;
+    width: 100%;
+    height: auto;
+}
+
+.ContactForm {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.InnerContactForm {
+    width: 90%;
+}
+
+.InnerContactForm h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.InnerContactForm h3 {
+    text-align: center;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.InnerContactForm input,
+.InnerContactForm textarea {
+    width: 100%;
+    background-color: #eee;
+    border: 1px solid rgba(0, 0, 0, 0.48);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.InnerContactForm input[type=submit] {
+    background-color: #000;
+    color: #fff;
+
+
+}
+
+/* Occupies window width */
+@media screen and (max-width:991px) {
+    .ContactFormParentClass {
+        display: block;
+        width: 100%;
+    }
+
+    /* Removes the image of the car as the window fades Information obtained from Reddit, StackOverFlow and Youtube */
+    .ContactFormImage {
+        display: none;
+    }
+
+    /* Allows image to fade */
+    .ContactForm {
+        background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)), url(Images/CarPortrait.jpg);
+        background-size: cover;
+    }
+
+    .InnerContactForm input,
+    .InnerContactForm textarea {
+        background-color: #fff;
+    }
+}
+
+/* Three columns side by side */
+.cardcolumn {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .cardcolumn {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.cardcontainer {
+    padding: 0 16px;
+    text-align: center;
+}
+
+/* Clear floats */
+.cardcontainer::after,
+.cardrow::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.cardtitle {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Three columns side by side */
+.cardcolumn {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .cardcolumn {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.cardcontainer {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+.cardcontainer::after,
+.cardrow::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.cardtitle {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
