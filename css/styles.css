@@ -77,3 +77,11 @@ footer {
     overflow: hidden; 
     padding-top: 10px;
 }
+.page-section-heading{
+}
+.car-card{
+    width: 22rem;
+}
+.car-card:hover{
+    transform: scale(1.02);
+}
