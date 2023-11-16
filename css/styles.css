@@ -307,3 +307,8 @@ footer {
     cursor: pointer;
     width: 100%;
 }
+.driver-tips-card-img {
+    height: 20rem;
+    width: auto;
+    object-fit: cover;
+}
