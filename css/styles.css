@@ -128,6 +128,19 @@ footer {
     vertical-align: middle;
 }
 
+.marketing-container {
+    text-align: center;
+}
+
+.Marketing {
+    display: block;
+    margin: 0 auto;
+}
+
+select {
+    display: block;
+    margin: 0 auto;
+}
 
 .ContactFormImage img {
     display: flex;
@@ -291,7 +304,6 @@ footer {
 .fa-instagram:hover {
     color: #44e386;
 }
-
 .driver-tips-card-img {
     height: 20rem;
     width: auto;
