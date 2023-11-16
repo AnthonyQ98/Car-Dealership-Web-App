@@ -56,25 +56,7 @@
     </div>
     
     <!-- CONTENT -->
-    <div class="page-content container-fluid col-10">
-        <div class="card mb-3">
-            <img src="img/andras-vas-mKrPowm00s8-unsplash.jpg" class="driver-tips-card-img card-img-top" alt="BMW steering wheel">
-            <!-- Photo by <a href="https://unsplash.com/@wasdrew?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andras Vas</a> on <a href="https://unsplash.com/photos/person-holding-bmw-vehicle-steering-wheel-mKrPowm00s8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
-            <div class="card-body">
-              <h5 class="card-title">Can't find your indicators?</h5>
-              <p class="card-text">Contrary to popular belief, BMW's actually have indicators. So why don't BMW drivers use them? For BMW drivers, this is just too much effort.. But you'll surely be able to find them behind the steering wheel.</p>
-            </div>
-        </div>
-
-        <div class="card mb-3">
-            <img src="img/c-joyful-uWOBgtCD_m8-unsplash.jpg" class="driver-tips-card-img card-img-top" alt="BMW steering wheel">
-            <!-- Photo by <a href="https://unsplash.com/@alonly?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">C Joyful</a> on <a href="https://unsplash.com/photos/man-in-white-and-black-stripe-shirt-and-black-pants-standing-beside-black-car-during-daytime-uWOBgtCD_m8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
-            <div class="card-body">
-              <h5 class="card-title">Other drivers not respecting your phone time?</h5>
-              <p class="card-text">You are perfect. Nothing you do is wrong. The message was important and you have the right to read it whilst swerving lanes. They should just get out of yorur way.</p>
-            </div>
-        </div>
-    </div>
+    <div id="tips-container" class="page-content container-fluid col-10"></div>
 
     <div class="container text-center my-4">
         <button class="btn btn-primary mx-2">Contact Us</button>
@@ -94,3 +76,97 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function(){
+        $(gameModal).modal('show'); //Game pop up on page load
+    });
+
+    //TIPS CODE
+    tips =[
+        {
+            image: "img/andras-vas-mKrPowm00s8-unsplash.jpg",
+            imageAlt: "BMW Steering Wheel",
+            imageCredit: '<a href="https://unsplash.com/@wasdrew?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andras Vas</a> on <a href="https://unsplash.com/photos/person-holding-bmw-vehicle-steering-wheel-mKrPowm00s8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+            title: "Can't find your indicators?",
+            description: "Contrary to popular belief, BMW's actually have indicators. So why don't BMW drivers use them? For BMW drivers, this is just too much effort.. But you'll surely be able to find them behind the steering wheel."
+        },
+        {
+            image: "img/andry-star-NekeV7VKib0-unsplash.jpg",
+            imageAlt: "broken car",
+            imageCredit: '<a href="https://unsplash.com/@ka1ju_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">andry star</a> on <a href="https://unsplash.com/photos/an-old-blue-car-is-parked-in-a-field-NekeV7VKib0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+            title: "Buying your first car",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur error consectetur doloribus quis dignissimos quisquam odit voluptatum veniam vitae voluptate non a ipsam voluptatem repellendus quam sunt delectus, beatae animi."
+        },
+        {
+            image: "img/c-joyful-uWOBgtCD_m8-unsplash.jpg",
+            imageAlt: "car crash",
+            imageCredit: '<a href="https://unsplash.com/@alonly?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">C Joyful</a> on <a href="https://unsplash.com/photos/man-in-white-and-black-stripe-shirt-and-black-pants-standing-beside-black-car-during-daytime-uWOBgtCD_m8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+            title: "Other drivers not respecting your phone time?",
+            description: "You are perfect. Nothing you do is wrong. The message was important and you have the right to read it whilst swerving lanes. They should just get out of your way."
+        }
+    ]
+
+    const tipsHtml = tip => `<div class="card mb-3">
+        <img src="${tip.image}" class="driver-tips-card-img card-img-top" alt="${tip.imageAlt}">
+        <!-- Photo by ${tip.imageCredit} -->
+        <div class="card-body">
+            <h5 class="card-title">${tip.title}</h5>
+            <p class="card-text">${tip.description}</p>
+        </div>
+    </div>`
+
+    $('#tips-container').append(tips.map(tipsHtml));
+
+
+    // GAME CODE
+    const gameModal = `<div class="modal custom-popup-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-end" role="document">
+        <div class="modal-content">
+        <div class="modal-header py-4">
+            <h5 class="modal-title">Want to play a game to find your car?</h5>
+        </div>
+        <div class="modal-footer m-auto">
+            <button type="button" class="btn-lg btn-primary" data-dismiss="modal" onclick="playGame()">Play Game</button>
+            <button type="button" class="btn-lg btn-secondary" data-dismiss="modal">Not Now</button>
+        </div>
+        </div>
+    </div>
+    </div>`
+
+    const imageModal = `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Find Your Car</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <button id="generate-car-button" onclick=generateCarImage() type="button" class="btn btn-warning">Generate Car</button>
+                <div id="generated-car"></div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+        </div>`
+
+    function playGame(){
+        $(imageModal).modal('show');
+    }
+
+    const carImages = ["img/audi_suv.jpg", "img/honda_suv.jpg", "img/kia_suv.jpg"]; 
+
+    function generateCarImage(){
+        var car = getRandomCarLink(carImages);
+        $('#generated-car').html(`<img src="${car}" class="driver-tips-card-img card-img-top py-2 m-auto" alt="${car}">`);
+    }
+
+    function getRandomCarLink(carImages){
+        var random = Math.floor(Math.random() * carImages.length);
+        var car = carImages[random];
+        return car;
+    }
+</script>
