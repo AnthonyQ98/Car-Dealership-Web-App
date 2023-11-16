@@ -314,3 +314,9 @@ select {
     max-height: 230px;
     object-fit: cover;
 }
+
+
+.modal-open .custom-popup-modal {
+    top: 0;
+    right: 0;
+}
