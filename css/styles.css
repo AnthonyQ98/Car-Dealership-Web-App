@@ -77,11 +77,11 @@ footer {
     overflow: hidden; 
     padding-top: 10px;
 }
-.page-section-heading{
-}
+
 .car-card{
     width: 22rem;
 }
+
 .car-card:hover{
     transform: scale(1.02);
 }
@@ -307,8 +307,14 @@ footer {
     cursor: pointer;
     width: 100%;
 }
+
 .driver-tips-card-img {
     height: 20rem;
     width: auto;
+    object-fit: cover;
+}
+
+.car-card-image {
+    max-height: 230px;
     object-fit: cover;
 }
