@@ -73,9 +73,9 @@
                         <input id="Age" type="number" required oninput="validateAge()">
                         <span id="sAgeError" style="color: darkred;"></span>
                         <p>Email: </p>
-                        <input id="Email" type="text" pattern=".+@.+\.([a-z]+)" required>
+                        <input id="Email" type="email" pattern=".+@.+\.([a-z]+)" required>
                         <p>Phone: </p>
-                        <input id=" Phone" type="number" required>
+                        <input id=" Phone" type="tel" required>
 
 
                         <div id="radio">
@@ -88,6 +88,16 @@
                                     <label>Email</label><input type="radio" name="Contact" required />
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="marketing-container"><label class="Marketing">How Did You Hear About
+                                Us?</label><br>
+                            <select>
+                                <option>TV Advertisement</option>
+                                <option>Word Of Mouth</option>
+                                <option>Google Search</option>
+                                <option>None of the above</option>
+                            </select>
                         </div>
 
                         <p>Subject: </p>
