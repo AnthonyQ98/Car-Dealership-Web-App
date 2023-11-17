@@ -3,7 +3,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #f2f7ff; 
+    background-color: #f2f7ff;
+    position: relative;
+}
+
+#teamImg {
+    width: 50%;
+    align-self: center;
+    max-height: 270px;
 }
 
 header,
@@ -58,7 +65,12 @@ section {
 }
 
 footer {
-    margin-top: auto; /* Push the footer to the bottom of the page */
+    margin-top: auto;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
 }
 
 .custom-caption {
@@ -93,9 +105,10 @@ footer {
 }
 
 .ContactFormParentClass {
-    background: #fff;
     display: flex;
-    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow the form to grow and push the footer down */
 }
 
 
@@ -153,9 +166,13 @@ select {
 
 
 .ContactForm {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px; /* Add space at the bottom of the form */
 }
 
 .InnerContactForm {
@@ -169,6 +186,12 @@ select {
 }
 
 .InnerContactForm h3 {
+    text-align: center;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.InnerContactForm h6 {
     text-align: center;
     font-size: 16px;
     color: #2c3e50;
@@ -195,6 +218,7 @@ select {
     .ContactFormParentClass {
         display: block;
         width: 100%;
+        margin-bottom:60px;
     }
 
     /* Removes the image of the car as the window fades Information obtained from Reddit, StackOverFlow and Youtube */
@@ -319,4 +343,29 @@ select {
 .modal-open .custom-popup-modal {
     top: 0;
     right: 0;
+}
+
+.ContactFormParentClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow the form to grow and push the footer down */
+}
+
+.ContactForm {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px; /* Add space at the bottom of the form */
+}
+
+.InnerContactForm {
+    width: 100%;
+}
+
+#footerLinks {
+    color: white;
 }
