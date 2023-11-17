@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>Hamilton College Motors - Car Dealership</title>
+    <!-- Using bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Generic stylesheet we use across all pages to keep consistency in certain elements i.e footer, header, divs, background colors, etc. -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -15,8 +18,9 @@
         <h1>Welcome to Hamilton College Motors</h1>
     </header>
 
+    <!-- Navigation bar, with CSS for when page is below a certain width to become mobile friendly [links will turn into a singular drop down] -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">HC Motors</a>
+        <a class="navbar-brand" href="index.html">HC Motors</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,10 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SomePageHereLads??</a>
+                    <a class="nav-link" href="drivertips.html">Driver tips</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -36,19 +40,21 @@
                         Services
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Buy a car</a>
-                        <a class="dropdown-item" href="#">Sell my Car</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Book a service</a>
+                        <a class="dropdown-item" href="buyacar.html">Buy a car</a>
+                        <a class="dropdown-item" href="sellmycar.html">Sell my Car</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Contact</a>
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="meetheteam.html">Meet the team</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <!-- Carousel with the help of bootstrap for styling -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="max-width: 800px; margin: auto;">
         <h2 class="text-center my-4">Featured Cars</h2>
         <ol class="carousel-indicators">
@@ -89,17 +95,20 @@
         </a>
     </div>
 
+    <!-- bottom of page buttons -->
     <div class="container text-center my-4">
-        <button class="btn btn-primary mx-2">Contact Us</button>
-        <button class="btn btn-success mx-2">Leasing</button>
-        <button class="btn btn-info mx-2">Sell My Car</button>
-        <button class="btn btn-warning mx-2">Meet the Team</button>
+        <button class="btn btn-primary mx-2"><a id="footerLinks" href="contactus.html">Contact Us</a></button>
+        <button class="btn btn-success mx-2"><a id="footerLinks" href="buyacar.html">Buy A Car</a></button>
+        <button class="btn btn-info mx-2"><a id="footerLinks" href="sellmycar.html">Sell My Car</a></button>
+        <button class="btn btn-warning mx-2"><a id="footerLinks" href="meetheteam.html">Meet the Team</a></button>
     </div>
 
+    <!-- declare footer -->
     <footer>
-        <p>&copy; 2023 Car Dealership. All rights reserved.</p>
+        <p>&copy; 2023 Hamilton College Motors. All rights reserved.</p>
     </footer>
 
+    <!-- Import bootstrap and jquery libs -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

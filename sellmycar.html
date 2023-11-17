@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sell Your Car</title>
+    <!-- Using bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Generic stylesheet we use across all pages to keep consistency in certain elements i.e footer, header, divs, background colors, etc. -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <p>To be continued</p>
+
+    <header>
+        <h1>Welcome to Hamilton College Motors</h1>
+    </header>
+
+    <!-- Navigation bar, with CSS for when page is below a certain width to become mobile friendly [links will turn into a singular drop down] -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">HC Motors</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="drivertips.html">Driver tips</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="buyacar.html">Buy a car</a>
+                        <a class="dropdown-item" href="sellmycar.html">Sell my Car</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="meetheteam.html">Meet the team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- creating parent div for form to help position inner elements relative to parent -->
+    <div class="ContactFormParentClass">
+        <div class="ContactForm">
+            <div class="InnerContactForm">
+                <!-- using BRs to simply push down text from form input & nav bar -->
+                <br>
+                <h2>Sell Your Car</h2>
+                <h3>Fill out the form below to sell your car</h3>
+                <!-- Motivating users to sell their cars for some reason -->
+                <h6>Sick of terrible traffic? Want to become an eScooter maniac?</h6>
+                <br>
+
+
+                <!-- form that uses the script at the bottom to show a JS alert box saying "Car is posted" (but not really) -->
+                <form id="sellCarForm">
+                    <!-- basic label/input combo for receiving data from customer -->
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                    <br>
+
+                    <label for="customerEmail">Email:</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+                    <br>
+
+                    <label for="carMake">Car Make:</label>
+                    <input type="text" id="carMake" name="carMake" required>
+                    <br>
+                    <label for="carModel">Car Model:</label>
+                    <input type="text" id="carModel" name="carModel" required>
+                    <br>
+                    <label for="carYear">Car Year:</label>
+                    <input type="text" id="carYear" name="carYear" required>
+                    <br>
+                    <label for="carDescription">Car Description:</label>
+                    <textarea id="carDescription" name="carDescription" required></textarea>
+                    <br>
+
+                    <label for="askingPrice">Asking Price:</label>
+                    <input type="number" id="askingPrice" name="askingPrice" required>
+                    <br>
+                    <!-- using the built in file type to accept images for the users car -->
+                    <label for="carImage">Upload Car Image:</label>
+                    <input type="file" id="carImage" name="carImage" accept="image/*" required>
+                    <br>
+                    <input type="submit" value="Submit" onclick="submitForm()">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Hamilton College Motors. All rights reserved.</p>
+    </footer>
+
+    <!-- declaring a JS script tag and building a submitForm function that will simply grab the path of the image and show it in the alert -->
+    <!-- We were going to show the image on the page, however, this would be overly complex for this CA -->
+    <script>
+        function submitForm() {
+            var uploadedImage = document.getElementById('carImage').value;
+            alert('Your car has been posted!\nUploaded Image: ' + uploadedImage);
+            document.getElementById("sellCarForm").reset();
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
