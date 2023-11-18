@@ -101,11 +101,11 @@ footer {
 
 /* Idea here is to have a contact form with an image of a car beside it. As the page decreases in size the image of the car fades to the background. */
 
-.ContactFormContainer {
+.ContactFormContainer1 {
     margin-top: -0px;
 }
 
-.ContactFormParentClass {
+.ContactFormParentClass1 {
     background: #fff;
     display: flex;
     height: auto;
@@ -155,7 +155,7 @@ select {
     margin: 0 auto;
 }
 
-.ContactFormImage img {
+.ContactFormImage1 img {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,13 +165,13 @@ select {
 }
 
 
-.ContactForm {
+.ContactForm1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-.InnerContactForm {
+.InnerContactForm1 {
     width: 90%;
 }
 
@@ -181,14 +181,14 @@ select {
     margin-top: 0px;
 }
 
-.InnerContactForm h3 {
+.InnerContactForm1 h3 {
     text-align: center;
     font-size: 16px;
     color: #2c3e50;
 }
 
-.InnerContactForm input,
-.InnerContactForm textarea {
+.InnerContactForm1 input,
+.InnerContactForm1 textarea {
     width: 100%;
     background-color: #eee;
     border: 1px solid rgba(0, 0, 0, 0.48);
@@ -196,7 +196,7 @@ select {
     margin-bottom: 20px;
 }
 
-.InnerContactForm input[type=submit] {
+.InnerContactForm1 input[type=submit] {
     background-color: #000;
     color: #fff;
 
@@ -205,24 +205,24 @@ select {
 
 /* Occupies window width */
 @media screen and (max-width:991px) {
-    .ContactFormParentClass {
+    .ContactFormParentClass1 {
         display: block;
         width: 100%;
     }
 
     /* Removes the image of the car as the window fades Information obtained from Reddit, StackOverFlow and Youtube */
-    .ContactFormImage {
+    .ContactFormImage1 {
         display: none;
     }
 
     /* Allows image to fade */
-    .ContactForm {
+    .ContactForm1 {
         background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)), url(img/CarPortrait.jpg);
         background-size: cover;
     }
 
-    .InnerContactForm input,
-    .InnerContactForm textarea {
+    .InnerContactForm1 input,
+    .InnerContactForm1 textarea {
         background-color: #fff;
     }
 }
