@@ -10,11 +10,11 @@
 </head>
 
 <body>
-
+    <!-- WELCOME MESSAGE -->
     <header>
         <h1>Welcome to Hamilton College Motors</h1>
     </header>
-
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">HC Motors</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -25,10 +25,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="drivertips.html">Driver tips</a>
+                    <a class="nav-link" href="drivertips.html">Driver tips<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -52,37 +52,38 @@
 
     <!-- PAGE HEADING -->
     <div class="page-section-heading container-fluid col-10 py-4">
-        <h3>Driver Tips</h3>
-        <p>Need some driver tips? <br>Here we have a collection of short educational pieces for all kinds of drivers.</p>
+        <h3 class="carhire-heading-font">Driver Tips</h3>
+        <p class="carhire-standard-font">Need some driver tips? <br>Here we have a collection of short educational pieces for all kinds of drivers.</p>
     </div>
     
     <!-- CONTENT -->
     <div id="tips-container" class="page-content container-fluid col-10"></div>
 
+    <!-- bottom of page buttons -->
     <div class="container text-center my-4">
-        <button class="btn btn-primary mx-2">Contact Us</button>
-        <button class="btn btn-success mx-2">Leasing</button>
-        <button class="btn btn-info mx-2">Sell My Car</button>
-        <button class="btn btn-warning mx-2">Meet the Team</button>
+        <button class="btn btn-primary mx-2"><a id="footerLinks" href="contactus.html">Contact Us</a></button>
+        <button class="btn btn-success mx-2"><a id="footerLinks" href="buyacar.html">Buy A Car</a></button>
+        <button class="btn btn-info mx-2"><a id="footerLinks" href="sellmycar.html">Sell My Car</a></button>
+        <button class="btn btn-warning mx-2"><a id="footerLinks" href="meetheteam.html">Meet the Team</a></button>
     </div>
-
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2023 Car Dealership. All rights reserved.</p>
     </footer>
-
+    <!-- LIBRARIES/FRAMEWORKS -->
+    <script src="scripts/cars.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
-<script>
+<script type="text/javascript">
     $(document).ready(function(){
         $(gameModal).modal('show'); //Game pop up on page load
     });
 
-    //TIPS CODE
+    //Array of tip information that gets passed into a reusable html component.
     tips =[
         {
             image: "img/andras-vas-mKrPowm00s8-unsplash.jpg",
@@ -96,7 +97,12 @@
             imageAlt: "broken car",
             imageCredit: '<a href="https://unsplash.com/@ka1ju_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">andry star</a> on <a href="https://unsplash.com/photos/an-old-blue-car-is-parked-in-a-field-NekeV7VKib0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
             title: "Buying your first car",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur error consectetur doloribus quis dignissimos quisquam odit voluptatum veniam vitae voluptate non a ipsam voluptatem repellendus quam sunt delectus, beatae animi."
+            description: `Buying your first car can be expensive. We recommend some of the following. 
+            <ul>
+                <li class="carhire-standard-font">Fiat Panda</li>
+                <li class="carhire-standard-font">Citreon Ami</li>
+                <li class="carhire-standard-font">Volkswagen Up</li>
+            </ul>`
         },
         {
             image: "img/c-joyful-uWOBgtCD_m8-unsplash.jpg",
@@ -106,68 +112,69 @@
             description: "You are perfect. Nothing you do is wrong. The message was important and you have the right to read it whilst swerving lanes. They should just get out of your way."
         }
     ]
-
+    //variable for HTML component to pass in tip attributes
     const tipsHtml = tip => `<div class="card mb-3">
         <img src="${tip.image}" class="driver-tips-card-img card-img-top" alt="${tip.imageAlt}">
         <!-- Photo by ${tip.imageCredit} -->
         <div class="card-body">
-            <h5 class="card-title">${tip.title}</h5>
-            <p class="card-text">${tip.description}</p>
+            <h5 class="card-title carhire-heading-font">${tip.title}</h5>
+            <p class="card-text carhire-standard-font">${tip.description}</p>
         </div>
     </div>`
-
+    //selecting the tips-container and inserting our tips through tipsHtml for each tip
     $('#tips-container').append(tips.map(tipsHtml));
 
 
-    // GAME CODE
+    // GAME CODE - Popup asking user do they want to play
     const gameModal = `<div class="modal custom-popup-modal" role="dialog">
     <div class="modal-dialog modal-dialog-end" role="document">
         <div class="modal-content">
         <div class="modal-header py-4">
-            <h5 class="modal-title">Want to play a game to find your car?</h5>
+            <h5 class="modal-title mx-auto carhire-heading-font">Want to play a game to find your car?</h5>
         </div>
         <div class="modal-footer m-auto">
-            <button type="button" class="btn-lg btn-primary" data-dismiss="modal" onclick="playGame()">Play Game</button>
-            <button type="button" class="btn-lg btn-secondary" data-dismiss="modal">Not Now</button>
+            <button type="button" class="btn-lg btn-success carhire-standard-font"" data-dismiss="modal" onclick="playGame()">Play Game</button>
+            <button type="button" class="btn-lg btn-info carhire-standard-font" data-dismiss="modal">Not Now</button>
         </div>
         </div>
     </div>
     </div>`
 
-    const imageModal = `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    // GAME CODE - Popup asking user to generate their car
+    const generateCarModal = `<div class="modal fade" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Find Your Car</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+            <h5 class="modal-title mx-auto carhire-heading-font" id="exampleModalLongTitle">Generate Your Car!</h5>
             </button>
             </div>
-            <div class="modal-body">
-                <button id="generate-car-button" onclick=generateCarImage() type="button" class="btn btn-warning">Generate Car</button>
+            <div class="modal-body mx-auto">
                 <div id="generated-car"></div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="generate-car-button" onclick=generateCarImage() type="button" class="btn btn-warning carhire-standard-font mr-auto">Generate Car</button>
+            <button type="button" class="btn btn-secondary carhire-standard-font" data-dismiss="modal">Close</button>
             </div>
         </div>
         </div>
         </div>`
 
+    //Used to call generateCarModal and display game after first pop up
     function playGame(){
-        $(imageModal).modal('show');
+        $(generateCarModal).modal('show');
     }
 
-    const carImages = ["img/audi_suv.jpg", "img/honda_suv.jpg", "img/kia_suv.jpg"]; 
-
+    //generates a random car from cars javascript, assigns first index to car image and second to name
     function generateCarImage(){
-        var car = getRandomCarLink(carImages);
-        $('#generated-car').html(`<img src="${car}" class="driver-tips-card-img card-img-top py-2 m-auto" alt="${car}">`);
+        var car = getRandomCarLink(cars);
+        $('#generated-car').html(`<img src="${car.image}" class="driver-tips-card-img py-2" alt="${car.name}">
+        <h5 class="carhire-heading-font">${car.name}</h5>`
+        );
     }
-
-    function getRandomCarLink(carImages){
-        var random = Math.floor(Math.random() * carImages.length);
-        var car = carImages[random];
+    //random car generator for above function
+    function getRandomCarLink(cars){
+        var random = Math.floor(Math.random() * cars.length);
+        var car = cars[random];
         return car;
     }
 </script>

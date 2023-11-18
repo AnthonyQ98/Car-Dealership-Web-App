@@ -1,3 +1,15 @@
+/* START OF TYPOGRAPHY SECTION */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Playpen+Sans:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+.carhire-heading-font {
+    font-family: 'Oswald', sans-serif;
+}
+.carhire-standard-font {
+    font-family: 'Barlow', sans-serif;
+}
+/* END OF TYPOGRAPHY SECTION */
+
 body {
     display: flex;
     flex-direction: column;
