@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="drivertips.html">Driver tips</a>
@@ -35,7 +35,7 @@
                       Services
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="buyacar.html">Buy a car</a>
+                      <a class="dropdown-item" href="buyacar.html">Buy a car<span class="sr-only">(current)</span></a>
                       <a class="dropdown-item" href="sellmycar.html">Sell my Car</a>
                   </div>
               </li>
@@ -51,24 +51,27 @@
     
     <!-- PAGE HEADING -->
     <div class="page-section-heading container-fluid py-4">
-        <h3>All Available Cars</h3>
+        <h3 class="carhire-heading-font">Browse Available Cars</h3>
     </div>
 
     <!-- CAR LISTING -->
     <div id="car-listing-container" class="car-list-container container-fluid col-12 row text-center"></div>
    
 
+    <!-- bottom of page buttons -->
     <div class="container text-center my-4">
-        <button class="btn btn-primary mx-2">Contact Us</button>
-        <button class="btn btn-success mx-2">Leasing</button>
-        <button class="btn btn-info mx-2">Sell My Car</button>
-        <button class="btn btn-warning mx-2">Meet the Team</button>
-    </div>
+      <button class="btn btn-primary mx-2"><a id="footerLinks" href="contactus.html">Contact Us</a></button>
+      <button class="btn btn-success mx-2"><a id="footerLinks" href="buyacar.html">Buy A Car</a></button>
+      <button class="btn btn-info mx-2"><a id="footerLinks" href="sellmycar.html">Sell My Car</a></button>
+      <button class="btn btn-warning mx-2"><a id="footerLinks" href="meetheteam.html">Meet the Team</a></button>
+  </div>
+
     <!-- PAGE FOOTER -->
     <footer>
         <p>&copy; 2023 Car Dealership. All rights reserved.</p>
     </footer>
-
+    <!-- LIBRARIES/FRAMEWORKS -->
+    <script src="scripts/cars.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -76,97 +79,21 @@
 </body>
 
 </html>
-<script>
-  const cars = [
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "5"
-    },
-    {
-      image: "img/honda_suv.jpg",
-      imageAlt: "honda suv",
-      name: "Honda SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "5"
-    },
-    {
-      image: "img/kia_suv.jpg",
-      imageAlt: "kia suv",
-      name: "Kia SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "5"
-    },
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "3"
-    },
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "3"
-    },
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "3"
-    },
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "3"
-    },
-    {
-      image: "img/audi_suv.jpg",
-      imageAlt: "audi suv",
-      name: "Audio SUV",
-      description: "Very fancy car",
-      price: "420",
-      transmittion: "manual",
-      seats: "3"
-    },
-  ]
-
+<script type="text/javascript">
+  //carsHtml is a component for dynamically display car data
   const carsHtml = car => `<div class="car-card card m-2">
                 <img class="car-card-image card-img-top" src="${car.image}" alt="${car.imageAlt}">
             <div class="card-body">
-              <h5 class="card-title">${car.name}</h5>
-              <p class="card-text">${car.description}</p>
+              <h5 class="card-title carhire-heading-font">${car.name}</h5>
+              <p class="card-text carhire-standard-font">${car.description}</p>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Price: €${car.price}</li>
-              <li class="list-group-item">Transmission: ${car.transmittion}</li>
-              <li class="list-group-item">Seats: ${car.seats}</li>
-              <li class="list-group-item"><button type="button" class="btn btn-warning px-5">Enquire</button></li>
+            <ul class="list-group">
+              <li class="list-group-item carhire-standard-font">Price: €${car.price}</li>
+              <li class="list-group-item carhire-standard-font">Transmission: ${car.transmittion}</li>
+              <li class="list-group-item carhire-standard-font">Seats: ${car.seats}</li>
+              <li class="list-group-item carhire-standard-font"><a type="button" href="contactus.html" class="btn btn-warning px-5">Enquire</a></li>
             </ul>
         </div>`
-
+//inserting car data via carsHtml component into car-listing-container. Car data can be found in script folder as it is reusable (drivertips.htmls)
   $('#car-listing-container').append(cars.map(carsHtml));
-  
-
 </script>
