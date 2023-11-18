@@ -1,3 +1,15 @@
+/* START OF TYPOGRAPHY SECTION */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Playpen+Sans:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+.carhire-heading-font {
+    font-family: 'Oswald', sans-serif;
+}
+.carhire-standard-font {
+    font-family: 'Barlow', sans-serif;
+}
+/* END OF TYPOGRAPHY SECTION */
+
 body {
     display: flex;
     flex-direction: column;
@@ -90,25 +102,25 @@ footer {
     padding-top: 10px;
 }
 
-.car-card{
+
+.car-card {
     width: 22rem;
 }
 
-.car-card:hover{
+.car-card:hover {
     transform: scale(1.02);
 }
 
 /* Idea here is to have a contact form with an image of a car beside it. As the page decreases in size the image of the car fades to the background. */
 
-.ContactFormContainer {
+.ContactFormContainer1 {
     margin-top: -0px;
 }
 
-.ContactFormParentClass {
+.ContactFormParentClass1 {
+    background: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1; /* Allow the form to grow and push the footer down */
+    height: auto;
 }
 
 
@@ -155,7 +167,7 @@ select {
     margin: 0 auto;
 }
 
-.ContactFormImage img {
+.ContactFormImage1 img {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,40 +177,30 @@ select {
 }
 
 
-.ContactForm {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 90%;
-    max-width: 600px;
-    margin-bottom: 20px; /* Add space at the bottom of the form */
+.ContactForm1 {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.InnerContactForm {
+.InnerContactForm1 {
     width: 90%;
 }
 
-.InnerContactForm h2 {
+.InnerContactForm1 h2 {
     text-transform: uppercase;
     text-align: center;
     margin-top: 0px;
 }
 
-.InnerContactForm h3 {
+.InnerContactForm1 h3 {
     text-align: center;
     font-size: 16px;
     color: #2c3e50;
 }
 
-.InnerContactForm h6 {
-    text-align: center;
-    font-size: 16px;
-    color: #2c3e50;
-}
-
-.InnerContactForm input,
-.InnerContactForm textarea {
+.InnerContactForm1 input,
+.InnerContactForm1 textarea {
     width: 100%;
     background-color: #eee;
     border: 1px solid rgba(0, 0, 0, 0.48);
@@ -206,7 +208,7 @@ select {
     margin-bottom: 20px;
 }
 
-.InnerContactForm input[type=submit] {
+.InnerContactForm1 input[type=submit] {
     background-color: #000;
     color: #fff;
 
@@ -215,25 +217,24 @@ select {
 
 /* Occupies window width */
 @media screen and (max-width:991px) {
-    .ContactFormParentClass {
+    .ContactFormParentClass1 {
         display: block;
         width: 100%;
-        margin-bottom:60px;
     }
 
     /* Removes the image of the car as the window fades Information obtained from Reddit, StackOverFlow and Youtube */
-    .ContactFormImage {
+    .ContactFormImage1 {
         display: none;
     }
 
     /* Allows image to fade */
-    .ContactForm {
-        background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)), url(Images/CarPortrait.jpg);
+    .ContactForm1 {
+        background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)),url("../img/CarPortrait.jpg");
         background-size: cover;
     }
 
-    .InnerContactForm input,
-    .InnerContactForm textarea {
+    .InnerContactForm1 input,
+    .InnerContactForm1 textarea {
         background-color: #fff;
     }
 }
