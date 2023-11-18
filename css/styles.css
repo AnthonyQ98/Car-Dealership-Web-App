@@ -217,7 +217,7 @@ select {
 
     /* Allows image to fade */
     .ContactForm1 {
-        background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)),url(img/CarPortrait.jpg);
+        background-image: linear-gradient(rgba(199, 195, 195, 0.781), rgba(199, 195, 195, 0.781)),url("../img/CarPortrait.jpg");
         background-size: cover;
     }
 
