@@ -97,6 +97,8 @@
                     <input type="file" id="carImage" name="carImage" accept="image/*" required>
                     <br>
                     <input type="submit" value="Submit" onclick="submitForm()">
+
+                    <div><p id="formSubmitMsg"></p></div>
                 </form>
             </div>
         </div>
@@ -112,6 +114,8 @@
         function submitForm() {
             var uploadedImage = document.getElementById('carImage').value;
             alert('Your car has been posted!\nUploaded Image: ' + uploadedImage);
+            var car = document.getElementById("carMake").value + " " + document.getElementById("carModel").value;
+            document.getElementById("formSubmitMsg").textContent = "Your car " + car + " has been listed! "
             document.getElementById("sellCarForm").reset();
         }
     </script>
