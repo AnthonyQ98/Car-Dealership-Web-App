@@ -368,5 +368,10 @@ select {
 }
 
 #footerLinks {
-    color: white;
+    color
+    : white;
+}
+
+.SellMyCarForm {
+    margin: auto;
 }
