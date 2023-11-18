@@ -105,9 +105,9 @@ footer {
 }
 
 .ContactFormParentClass {
+    background: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
     flex-grow: 1; /* Allow the form to grow and push the footer down */
 }
 
@@ -166,12 +166,9 @@ select {
 
 
 .ContactForm {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 90%;
-    max-width: 600px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     margin-bottom: 20px; /* Add space at the bottom of the form */
 }
 
