@@ -4,6 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Adding in our icon into the tab bar at the top of the page, also known as the favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/BadLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamilton College Motors - Car Dealership</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,50 +18,51 @@
         <h1>Welcome to Hamilton College Motors</h1>
     </header>
     <!-- NAVIGATION -->
-        <!-- Navigation bar, with CSS for when page is below a certain width to become mobile friendly [links will turn into a singular drop down] -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- Image was made in MS Paint by Anthony Quinn, no reference needed -->
-            <img src="img/BadLogo.png" alt="HC Motors Logo" width="50" height="50">
-            <a class="navbar-brand" href="index.html">HC Motors</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="drivertips.html">Driver tips</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="buyacar.html">Buy a car</a>
-                            <a class="dropdown-item" href="sellmycar.html">Sell my Car</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactus.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="meetheteam.html">Meet the team</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Navigation bar, with CSS for when page is below a certain width to become mobile friendly [links will turn into a singular drop down] -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Image was made in MS Paint by Anthony Quinn, no reference needed -->
+        <img src="img/BadLogo.png" alt="HC Motors Logo" width="50" height="50">
+        <a class="navbar-brand" href="index.html">HC Motors</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="drivertips.html">Driver tips</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="buyacar.html">Buy a car</a>
+                        <a class="dropdown-item" href="sellmycar.html">Sell my Car</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="meetheteam.html">Meet the team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- PAGE HEADING -->
     <div class="page-section-heading container-fluid col-10 py-4">
         <h3 class="carhire-heading-font">Driver Tips</h3>
-        <p class="carhire-standard-font">Need some driver tips? <br>Here we have a collection of short educational pieces for all kinds of drivers.</p>
+        <p class="carhire-standard-font">Need some driver tips? <br>Here we have a collection of short educational
+            pieces for all kinds of drivers.</p>
     </div>
-    
+
     <!-- CONTENT -->
     <div id="tips-container" class="page-content container-fluid col-10"></div>
 
@@ -83,12 +86,12 @@
 
 </html>
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(gameModal).modal('show'); //Game pop up on page load
     });
 
     //Array of tip information that gets passed into a reusable html component.
-    tips =[
+    tips = [
         {
             image: "img/andras-vas-mKrPowm00s8-unsplash.jpg",
             imageAlt: "BMW Steering Wheel",
@@ -164,19 +167,19 @@
         </div>`
 
     //Used to call generateCarModal and display game after first pop up
-    function playGame(){
+    function playGame() {
         $(generateCarModal).modal('show');
     }
 
     //generates a random car from cars javascript, assigns first index to car image and second to name
-    function generateCarImage(){
+    function generateCarImage() {
         var car = getRandomCarLink(cars);
         $('#generated-car').html(`<img src="${car.image}" class="driver-tips-card-img py-2" alt="${car.name}">
         <h5 class="carhire-heading-font">${car.name}</h5>`
         );
     }
     //random car generator for above function
-    function getRandomCarLink(cars){
+    function getRandomCarLink(cars) {
         var random = Math.floor(Math.random() * cars.length);
         var car = cars[random];
         return car;
