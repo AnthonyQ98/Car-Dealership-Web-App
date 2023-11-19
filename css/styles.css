@@ -1,3 +1,11 @@
+
+/*
+
+styles.css was a group effort, where all of the group appended their needed styling for their individual pages into this sheet, and we tried to
+reuse already defined style blocks where necessary, to follow the DRY principle (Dont Repeat Yourself)
+
+*/ 
+
 /* START OF TYPOGRAPHY SECTION */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Playpen+Sans:wght@100;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
